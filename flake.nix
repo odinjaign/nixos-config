@@ -2,9 +2,12 @@
   description = "Flake WSL";
   inputs = {
     # https://github.com/NixOS/nixpkgs.git
-    nixpkgs.url = "/flakes/nixpkgs/?ref=nixos-unstable";
+    nixpkgs.url = github:NixOS/nixpkgs/nixos-unstable;
+    # nixpkgs.url = "/flakes/nixpkgs/?ref=nixos-unstable";
+
     # https://github.com/nix-community/home-manager
     home-manager.url = "/flakes/home-manager/";
+    
     # https://github.com/nix-community/NixOS-WSL.git
     nixos-wsl.url = "/flakes/NixOS-WSL";
   };
