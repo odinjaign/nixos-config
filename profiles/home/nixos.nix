@@ -18,7 +18,7 @@
       history = { size = 10000; };
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "command-not-found" "python" ];
+        plugins = [ "git" "python" ];
         theme = "robbyrussell";
       };
     };

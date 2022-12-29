@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[ -d /flakes ] || mkdir /flakes
+[ -d /flakes ] || sudo mkdir /flakes && sudo chown $(id -u):$(id -g)  /flakes
 
 # Download /flakes
 
