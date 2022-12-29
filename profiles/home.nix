@@ -1,12 +1,9 @@
-{ home-manager, pkgs, ... }:
+{ home-manager, vscode-server, pkgs, ... }:
 
 {
   imports = [
     home-manager.nixosModule
-    (fetchTarball {
-      url = "https://github.com/msteen/nixos-vscode-server/tarball/master";
-      sha256 = "1qga1cmpavyw90xap5kfz8i6yz85b0blkkwvl00sbaxqcgib2rvv";
-    })
+    vscode-server.nixosModule
   ];
 
   services.vscode-server.enable = true;

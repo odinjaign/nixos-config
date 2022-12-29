@@ -17,3 +17,4 @@ function clone_repo {
 clone_repo https://github.com/NixOS/nixpkgs.git nixos-unstable /flakes/nixpkgs
 clone_repo https://github.com/nix-community/home-manager.git master /flakes/home-manager
 clone_repo https://github.com/nix-community/NixOS-WSL.git main /flakes/NixOS-WSL
+clone_repo https://github.com/msteen/nixos-vscode-server.git master /flakes/nixos-vscode-server
