@@ -1,4 +1,4 @@
-.PHONY: clone, update
+.PHONY: clone, update, install
 
 clone: scripts/clone.sh
 	bash $^
