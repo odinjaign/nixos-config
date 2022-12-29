@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ go git wget vim python3Full nixfmt ];
+  home.packages = with pkgs; [ go git wget vim python3Full nixfmt gnumake tldr ];
   programs = {
     home-manager.enable = true;
     git = {
