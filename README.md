@@ -14,7 +14,9 @@ nix-shell -p git gnumake
 sudo mv /etc/nixos /etc/nixos.bak
 
 # 同步本仓库到 /etc/nixos
-sudo git clone -b wsl https://github.com/odinjaign/nixos-config.git /etc/nixos
+sudo git clone -b vm/nixos https://github.com/odinjaign/nixos-config.git /etc/nixos
+# 注意替换 hardware-configuration.nix
+# sudo cp -f /etc/nixos.bak/hardware-configuration.nix /etc/nixos/hardware-configuration.nix
 
 # 安装
 cd /etc/nixos
