@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     go git wget vim python3Full nixfmt gnumake tldr
-    rustup
+    rustup tree
   ];
   programs = {
     home-manager.enable = true;
