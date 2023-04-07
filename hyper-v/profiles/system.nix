@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./desktop/gnome.nix
+    # ./desktop/slim.nix
   ];
 
   boot.loader = {

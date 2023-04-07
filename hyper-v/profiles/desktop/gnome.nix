@@ -11,13 +11,15 @@
   };
 
   # 显卡设置
-  services.xserver.videoDrivers = [
-    "modesetting" # 只使用集成显卡
-    # "nvidia" # 使用 Nvidia 显卡
-  ];
+  # services.xserver.videoDrivers = [
+  #   "modesetting" # 只使用集成显卡
+  #   # "nvidia" # 使用 Nvidia 显卡
+  # ];
 
   services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.debug = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome.debug = true;
   services.gnome.core-utilities.enable = false; # 最小化安装
 
   # -------------------- GNOME --------------------
