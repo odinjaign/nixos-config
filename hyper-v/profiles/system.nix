@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./desktop/gnome.nix
+  ];
 
   boot.loader = {
     systemd-boot.enable = true;
