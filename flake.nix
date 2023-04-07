@@ -25,12 +25,12 @@
     nixosConfigurations.nixos-hyper-v = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
-      modules = [ ./hyper-v/configuration.nix ];
+      modules = [ ./hyper-v ];
     };
     nixosConfigurations.nixos-wsl = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = attrs;
-      modules = [ ./wsl/configuration.nix ];
+      modules = [ ./wsl ];
     };
   };
 }
