@@ -8,6 +8,15 @@
     efi.efiSysMountPoint = "/boot/efi";
   };
 
+  boot.kernelParams = [
+    # 内核参数
+    "quiet"
+    "udev.log_level=3"
+    "nomodeset" # 无法启动图形界面时使用
+  ];
+
+
+
   networking = {
     hostName = "nixos-hyper-v";
     networkmanager.enable = true;
@@ -30,13 +39,7 @@
     };
   };
 
-  services = {
-    xserver = {
-      layout = "cn";
-      xkbVariant = "";
-    };
-    openssh.enable = true;
-  };
+  services.openssh.enable = true;
 
 
   nixpkgs.config.allowUnfree = true;

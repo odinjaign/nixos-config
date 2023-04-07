@@ -7,7 +7,7 @@
     wget
     vim
     python3Full
-    nixfmt
+    nixpkgs-fmt
     gnumake
     tldr
     rustup
