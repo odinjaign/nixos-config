@@ -5,5 +5,8 @@
     qq
     qv2ray
     microsoft-edge
+    tilda
+    helix
+    tree
   ];
 }
