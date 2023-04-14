@@ -3,6 +3,7 @@
   imports = [
     ./boot
     ./hardware
+    ./security
     ./network
     ./nix
     ./packages
