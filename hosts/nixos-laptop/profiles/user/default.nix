@@ -8,7 +8,10 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.jaign = {
-      imports = [ ./home ];
+      imports = [
+        ( {...}: { programs.home-manager.enable = true; } )
+        ./home
+      ];
       home.stateVersion = "22.11";
     };
   };
