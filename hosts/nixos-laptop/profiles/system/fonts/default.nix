@@ -1,5 +1,4 @@
-{pkgs, ...}:
-{
+{pkgs, ...}: {
   fonts = {
     fontDir.enable = true;
     fonts = with pkgs; [
@@ -15,7 +14,7 @@
     ];
     fontconfig = {
       defaultFonts = {
-        emoji = [ "Noto Color Emoji" ];
+        emoji = ["Noto Color Emoji"];
         monospace = [
           "Noto Sans Mono CJK SC"
           "Sarasa Mono SC"
@@ -34,5 +33,4 @@
       };
     };
   };
-  
 }

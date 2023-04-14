@@ -1,4 +1,3 @@
-{ ... }:
-{
-  imports = [ ./kde.nix ];
+{...}: {
+  imports = [./kde.nix];
 }

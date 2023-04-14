@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     firefox
     qq
@@ -34,7 +32,7 @@
       editorconfig.editorconfig
       ms-ceintl.vscode-language-pack-zh-hans
       pkief.material-icon-theme
+      kamadorueda.alejandra
     ];
   };
-
 }
