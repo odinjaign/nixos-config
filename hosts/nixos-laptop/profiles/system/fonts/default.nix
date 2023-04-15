@@ -3,14 +3,24 @@
     fontDir.enable = true;
     fonts = with pkgs; [
       noto-fonts
-      # noto-fonts-cjk-sans
-      # noto-fonts-cjk-serif
+      noto-fonts-cjk
+      noto-fonts-emoji
       source-han-sans
       source-han-serif
-      # sarasa-gothic  #更纱黑体
+      sarasa-gothic #更纱黑体
       source-code-pro
       hack-font
       jetbrains-mono
+      wqy_microhei
+      wqy_zenhei
+      (nerdfonts.override {
+        fonts = [
+          "FiraCode"
+          "DroidSansMono"
+          "JetBrainsMono"
+          "FantasqueSansMono"
+        ];
+      })
     ];
     fontconfig = {
       defaultFonts = {
