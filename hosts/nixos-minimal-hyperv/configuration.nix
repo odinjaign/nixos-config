@@ -64,23 +64,27 @@
     packages = with pkgs; [
       # firefox
       tree
+      # git # use home-manager
+      wget
+      helix
+      vim
     ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    helix
     pciutils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
-  programs.hyprland.enable = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.sessionVariables.WLR_RENDERER_ALLOW_SOFTWARE = "1";
-  environment.sessionVariables.LIBSEAT_BACKEND = "logind";
+
+  ################# Hyprland ####################
+  # programs.hyprland.enable = true;
+  # environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  # environment.sessionVariables.WLR_RENDERER_ALLOW_SOFTWARE = "1";
+  # environment.sessionVariables.LIBSEAT_BACKEND = "logind";
+
   # started in user sessions.
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {

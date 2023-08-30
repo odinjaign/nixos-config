@@ -9,6 +9,7 @@ in
     modules = [
       ./nixos-minimal-hyperv/hardware-configuration.nix
       ./nixos-minimal-hyperv/configuration.nix
+      ./nixos-minimal-hyperv/home-manager.nix
     ];
   };
 }
