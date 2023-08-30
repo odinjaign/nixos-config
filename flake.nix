@@ -1,36 +1,26 @@
 {
-  description = "Jaign Flake";
+  description = "A very basic flake";
 
+  outputs = inputs @ { self, nixpkgs, flake-parts, ... }: 
+    let
+    in
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ];
+      flake = {
+        nixosConfigurations = (
+          import ./hosts {
+            system = "x86_64-linux";
+            user = "jaign";
+            inherit nixpkgs self inputs;
+          }
+        );
+      };
+    };
+    
   inputs = {
-    nixpkgs.url = path:/nix/repos/NixOS.nixpkgs.nixos-unstable;
 
-    home-manager = {
-      url = path:/nix/repos/nix-community.home-manager.master;
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
 
-    vscode-server = {
-      url = path:/nix/repos/msteen.nixos-vscode-server.master;
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixos-wsl = {
-      url = path:/nix/repos/nix-community.NixOS-WSL.main;
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-  };
-
-  outputs = { self, nixpkgs, ... }@attrs: {
-    nixosConfigurations.nixos-hyper-v = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = attrs;
-      modules = [ ./hyper-v ];
-    };
-    nixosConfigurations.nixos-wsl = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = attrs;
-      modules = [ ./wsl ];
-    };
   };
 }
