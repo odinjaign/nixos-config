@@ -3,6 +3,7 @@
 
   outputs = inputs @ { self, nixpkgs, flake-parts, ... }: 
     let
+      user = "jaign";
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
@@ -10,8 +11,7 @@
         nixosConfigurations = (
           import ./hosts {
             system = "x86_64-linux";
-            user = "jaign";
-            inherit nixpkgs self inputs;
+            inherit nixpkgs self inputs user;
           }
         );
       };

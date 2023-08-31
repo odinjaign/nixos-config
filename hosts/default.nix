@@ -1,15 +1,13 @@
 { system, self, nixpkgs, inputs, user, ... }:
 let
-  lib = nixpkgs.lib;
+  machine = "nixos-minimal-hyperv";
 in
 {
-  nixos-minimal-hyperv = lib.nixosSystem {
+  ${machine} = nixpkgs.lib.nixosSystem {
     inherit system;
     specialArgs = { inherit inputs user; };
     modules = [
-      ./nixos-minimal-hyperv/hardware-configuration.nix
-      ./nixos-minimal-hyperv/configuration.nix
-      ./nixos-minimal-hyperv/home-manager.nix
+      ./${machine}
     ];
   };
 }
