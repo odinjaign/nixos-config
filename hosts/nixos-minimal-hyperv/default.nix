@@ -1,8 +1,8 @@
 {...}:
 {
   imports = [
-    ./profiles/hardware-configuration.nix
-    ./profiles/configuration.nix
-    ./profiles/home-manager.nix
+    ./profiles/hardware.nix
+    ./profiles/system.nix
+    ./profiles/user.nix
   ];
 }

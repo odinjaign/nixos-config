@@ -14,22 +14,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   security.sudo.wheelNeedsPassword = false;
 
-  programs.zsh.enable = true;
-  users.mutableUsers = false;
-  users.users.root.openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDhmSdP4sVoCQy7I72E4LBg77WA0dZYeUQHNOlNnD0M6"];
-  users.users.${user} = {
-    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDhmSdP4sVoCQy7I72E4LBg77WA0dZYeUQHNOlNnD0M6"];
-    hashedPassword = "$y$j9T$DiS4wHav8YWF1DHqin76n0$FLnuLHwJAWwXKAjVDm80vu9LaOpyG.s9MNZvLobnhvA";
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.zsh;
-  };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    pciutils
-  ];
+  environment.systemPackages = with pkgs; [ ];
 
   # Some programs need SUID wrappers, can be configured further or are
 
