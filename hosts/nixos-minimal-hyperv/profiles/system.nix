@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, user, ... }:
+{ config, pkgs, ... }:
 {
 
   # Use the systemd-boot EFI boot loader.
@@ -30,6 +30,7 @@
   services.openssh.settings.PasswordAuthentication = true;
   programs.ssh.startAgent = true;
 
+  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "23.05"; # Did you read the comment?
 
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
