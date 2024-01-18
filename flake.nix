@@ -20,7 +20,7 @@
         wsl-options = {
           username = "jaign";
           hostname = "nixos-wsl";
-          proxy = "http://192.168.30.10:7890"
+          proxy = "http://192.168.30.10:7890";
         };
       in nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
