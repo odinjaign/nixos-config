@@ -5,7 +5,7 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, username, hostname, inputs, ... }:
+{ config, lib, pkgs, wsl-options, inputs, ... }:
 
 {
   imports = [
@@ -18,7 +18,7 @@
   ];
 
   wsl.enable = true;
-  wsl.defaultUser = "${username}";
+  wsl.defaultUser = "${wsl-options.username}";
   
 
   # This value determines the NixOS release from which the default
@@ -30,7 +30,7 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   networking.proxy.default = "http://192.168.30.10:7890";
-  networking.hostName = "${hostname}";
+  networking.hostName = "${wsl-options.hostname}";
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs;[
@@ -40,8 +40,8 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.extraSpecialArgs = {inherit inputs;};
-  home-manager.users."${username}".imports = [
-    ./home-manager
+  home-manager.users."${wsl-options.username}".imports = [
+    ./home-manager/wsl.nix
   ];
   
 }

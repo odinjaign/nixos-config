@@ -17,11 +17,13 @@
     ,... } @inputs : {
     nixosConfigurations = {
       "nixos-wsl" = let
-	      username = "jaign"; 
-        hostname = "nixos-wsl";
+        wsl-options = {
+          username = "jaign";
+          hostname = "nixos-wsl";
+        };
       in nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs username hostname; };
+        specialArgs = { inherit inputs wsl-options; };
         modules = [
           # nixos-wsl.nixosModules.wsl
           # home-manager.nixosModules.home-manager
