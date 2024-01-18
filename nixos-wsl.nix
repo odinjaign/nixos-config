@@ -37,6 +37,10 @@
     git helix wget curl
   ];
 
+
+  users.users."${wsl-options.username}".shell = pkgs.zsh;
+  programs.zsh.enable = true;
+
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.extraSpecialArgs = {inherit inputs;};
