@@ -20,7 +20,7 @@
     nixosConfigurations = {
       "nixos-wsl" = let
         wsl-options = {
-          username = "jaign";
+          username = "nixos";
           hostname = "nixos-wsl";
           proxy = "http://192.168.30.10:7890";
         };
