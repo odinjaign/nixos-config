@@ -36,9 +36,14 @@
       "jaign" = let 
         system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages.${system};
+        home-options = {
+          username = "jaign";
+          home-dir = "/home/jaign";
+        };
       in home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home-manager ];
+        modules = [ ./home-manager/home.nix ];
+        extraSpecialArgs = { inherit inputs home-options; };
       };
     };
   };

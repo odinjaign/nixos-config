@@ -1,10 +1,10 @@
 { pkgs, ...}:{
 
   home.stateVersion = "23.11";
-  home.packages = with pkgs; [ vim ];
 
   imports = [
-    ./cli.nix
+    ./libs/pkgs.nix
+    ./libs/cli.nix
   ];
 
 }
