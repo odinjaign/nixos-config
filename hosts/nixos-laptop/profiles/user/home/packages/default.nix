@@ -3,7 +3,7 @@
     firefox
     qq
     qv2ray
-    microsoft-edge
+    # microsoft-edge
     telegram-desktop
     tilda
 
