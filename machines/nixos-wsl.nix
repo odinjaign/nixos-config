@@ -13,6 +13,8 @@
     inputs.nixos-wsl.nixosModules.wsl
     inputs.home-manager.nixosModules.home-manager
     
+    # ./libs/vscode.nix
+
   ];
 
   wsl.enable = true;
