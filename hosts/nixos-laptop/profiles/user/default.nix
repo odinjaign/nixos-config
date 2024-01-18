@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    home-manager.nixosModule
+    home-manager.nixosModules.home-manager
   ];
 
   home-manager = {
@@ -12,10 +12,10 @@
     useUserPackages = true;
     users.jaign = {
       imports = [
-        ({...}: {programs.home-manager.enable = true;})
+        # ({...}: {programs.home-manager.enable = true;})
         ./home
       ];
-      home.stateVersion = "22.11";
+      home.stateVersion = "24.05";
     };
   };
 

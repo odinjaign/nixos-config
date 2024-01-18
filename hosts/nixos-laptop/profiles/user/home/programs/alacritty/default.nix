@@ -6,7 +6,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      import = [./alacritty.yml];
+      import = [./alacritty.toml];
       font = {size = 12.0;};
       shell = {
         program = lib.getExe pkgs.zsh;
