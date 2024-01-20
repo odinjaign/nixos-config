@@ -19,7 +19,10 @@
   } @ inputs: {
     nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = inputs;
+      specialArgs = {
+        inherit inputs;
+      };
+      # // inputs;
       modules = [
         nur.nixosModules.nur
         ./hosts/nixos-laptop
