@@ -10,5 +10,6 @@
     helix
     tree
     alejandra
+    bilibili
   ];
 }
