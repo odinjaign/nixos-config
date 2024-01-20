@@ -11,6 +11,6 @@
     tree
     alejandra
     bilibili
-    citrix_workspace
+    # citrix_workspace
   ];
 }
