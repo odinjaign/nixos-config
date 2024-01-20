@@ -1,3 +1,6 @@
 {...}: {
-  imports = [./kde.nix];
+  imports = [
+    # ./hyprland.nix
+    ./kde.nix
+  ];
 }

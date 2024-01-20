@@ -8,6 +8,7 @@
   # services.xserver.videoDrivers = ["nvidia"]
 
   services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.displayManager.sddm.settings.X11.ServerArguments = "-dpi 100";
   services.xserver.desktopManager.plasma5.enable = true;
 
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
