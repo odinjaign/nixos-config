@@ -9,6 +9,8 @@
       kamadorueda.alejandra
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
+      # arrterian.nix-env-selector
+      ms-vscode-remote.remote-containers
     ];
     userSettings = {
       "window.dialogStyle" = "custom";
