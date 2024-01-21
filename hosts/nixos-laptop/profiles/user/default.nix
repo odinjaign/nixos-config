@@ -2,8 +2,9 @@
   # home-manager,
   pkgs,
   inputs,
+  self-options,
   ...
-}: {
+} @ args: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -11,7 +12,10 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.jaign = {
+    extraSpecialArgs = {
+      inherit inputs self-options;
+    };
+    users.${self-options.username} = {
       imports = [
         # ({...}: {programs.home-manager.enable = true;})
         ./home
@@ -22,9 +26,9 @@
 
   programs.zsh.enable = true;
 
-  users.users.jaign = {
+  users.users.${self-options.username} = {
     isNormalUser = true;
-    description = "jaign";
+    description = "${self-options.username}";
     extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
     packages = with pkgs; [];

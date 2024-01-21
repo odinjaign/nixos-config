@@ -11,20 +11,19 @@
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    nur,
-    ...
-  } @ inputs: {
-    nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
+  outputs = {...} @ inputs: let
+    self-options = {
+      username = "jaign";
+    };
+  in {
+    nixosConfigurations.nixos-laptop = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
-        inherit inputs;
+        inherit self-options inputs;
       };
       # // inputs;
       modules = [
-        nur.nixosModules.nur
+        inputs.nur.nixosModules.nur
         ./hosts/nixos-laptop
       ];
     };
