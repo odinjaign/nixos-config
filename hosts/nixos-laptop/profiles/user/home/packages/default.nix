@@ -12,5 +12,6 @@
     alejandra
     bilibili
     # citrix_workspace
+    nix-output-monitor
   ];
 }

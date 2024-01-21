@@ -1,9 +1,9 @@
 {...}: {
   imports = [
-    ./zsh.nix
-    ./git.nix
-    ./vscode.nix
-    ./lsd.nix
+    ./common/zsh.nix
+    ./common/git.nix
+    ./common/vscode.nix
+    ./common/lsd.nix
     ./alacritty
     # ./waybar # Need Wayland
   ];
