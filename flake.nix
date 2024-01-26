@@ -9,6 +9,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    # kde2nix.url = "github:nix-community/kde2nix";
   };
 
   outputs = {...} @ inputs: let
@@ -24,6 +26,7 @@
       # // inputs;
       modules = [
         inputs.nur.nixosModules.nur
+        # inputs.kde2nix.nixosModules.plasma6
         ./hosts/nixos-laptop
       ];
     };

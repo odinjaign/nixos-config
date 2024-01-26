@@ -4,6 +4,13 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nix.gc.automatic = false;
-  system.stateVersion = "24.05";
-  nixpkgs.config.allowUnfree = true;
+  system.stateVersion = "unstable";
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "openssl-1.1.1w"
+      "electron-19.1.9"
+    ];
+  };
 }
