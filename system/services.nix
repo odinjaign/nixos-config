@@ -4,7 +4,7 @@
     displayManager.sddm.enable = true;
     displayManager.sddm.settings = {
       X11 = {
-        ServerArguments = "-dpi 192";
+        ServerArguments = "-dpi 128";
       };
     };
     desktopManager.plasma5.enable = true;

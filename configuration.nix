@@ -70,7 +70,6 @@ in {
   };
 
   security.sudo.wheelNeedsPassword = false;
-
   environment.systemPackages = apps.system;
 
   system.stateVersion = "23.11";
@@ -78,10 +77,7 @@ in {
   nixpkgs.config = {
     allowUnfree = true;
     packageOverrides = pkgs: {
-      unstable = import srcs.unstable-nixos {
-        config = config.nixpkgs.config;
-      };
-      unstable-nixpkgs = import srcs.unstable-nixpkgs {
+      unstable = import srcs.unstable-nixpkgs {
         config = config.nixpkgs.config;
       };
       nur = import srcs.nur {inherit pkgs;};

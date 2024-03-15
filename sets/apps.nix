@@ -3,7 +3,7 @@ with pkgs; {
   user = [
     # guis
     firefox
-    unstable-nixpkgs.google-chrome
+    unstable.google-chrome
     # others
     tree
     alejandra
