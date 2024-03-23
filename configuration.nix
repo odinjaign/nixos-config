@@ -29,6 +29,7 @@ in {
   time.timeZone = "Asia/Shanghai";
 
   networking.proxy.default = "http://192.168.30.10:7890/";
+  networking.proxy.noProxy = "127.0.0.1,localhost,.localdomain,.aliyuncs.com,.cn";
 
   i18n.defaultLocale = "zh_CN.UTF-8";
   i18n.supportedLocales = ["zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8"];
@@ -42,7 +43,9 @@ in {
   };
 
   fonts.packages = with pkgs; [
-    wqy_zenhei
+    # sarasa-gothic
+    wqy_microhei
+    # wqy_zenhei
     (nerdfonts.override {fonts = ["FiraCode" "DroidSansMono"];})
   ];
 
@@ -54,7 +57,7 @@ in {
 
   users.users.jaign = {
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "docker"];
     packages = with pkgs; [];
     shell = pkgs.fish;
   };
@@ -82,5 +85,6 @@ in {
       };
       nur = import srcs.nur {inherit pkgs;};
     };
+    permittedInsecurePackages = apps.insecure;
   };
 }

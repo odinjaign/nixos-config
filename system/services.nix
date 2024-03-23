@@ -20,4 +20,11 @@
   printing = {
     enable = true;
   };
+
+  xrdp = {
+    enable = true;
+    defaultWindowManager = "startplasma-wayland";
+    openFirewall = true;
+    package = pkgs.unstable.xrdp;
+  };
 }

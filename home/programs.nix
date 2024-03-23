@@ -8,6 +8,7 @@
       ms-ceintl.vscode-language-pack-zh-hans
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
+      ms-vscode-remote.remote-containers
     ];
     userSettings = {
       "files.autoSave" = "off";

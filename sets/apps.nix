@@ -2,8 +2,13 @@
 with pkgs; {
   user = [
     # guis
-    firefox
+    # unstable.firefox
     unstable.google-chrome
+    unstable.telegram-desktop
+    unstable.bilibili
+    # nur.repos.xddxdd.wechat-uos # error
+    # unstable.clash-nyanpasu
+    qq
     # others
     tree
     alejandra
@@ -13,8 +18,11 @@ with pkgs; {
     alacritty
     atool
     httpie
-    qq
     # pkgs.qq
   ];
   system = [neovim];
+  insecure = [
+    "openssl-1.1.1w"
+    "electron-19.1.9"
+  ];
 }
